@@ -2,6 +2,7 @@
 <html lang="En">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leafy Focus</title>
     <link rel="stylesheet" type="text/css" href="style.css" title="style" />
     <script src = "script.js"> </script>
@@ -15,7 +16,9 @@
       </div>
 
       <div class="headings">
-        <a class="active" href="#tasks">Tasks</a>
+        <a href="#pomodoro">Pomodoro</a>
+        <a href="#tasks">Tasks</a>
+        <!--<a class="active" href="#tasks">Tasks</a>-->
         <a href="#about">About</a>
         <a href="#settings">Settings</a>
       </div>
@@ -31,16 +34,15 @@
     </div>
     -->
     <div class="rectangle">
-      <div class="modes"> 
-        <button> Pomodoro </button>
-        <button> Short Break </button>
-        <button> Long Break </button>
+      <div class = "modes"> 
+        <button id = "pomodoro"> Pomodoro </button>
+        <button id = "short"> Short Break </button>
+        <button id = "long"> Long Break </button>
       </div>
+      <p id = "countdown"></p>
     </div>
  
-    <p id = "countdown"></p>
-
-    <p> 25:00 </p>
+    
 
     <i class="fa-regular fa-circle-pause fa-2xl"></i>
     <i class="fa-regular fa-circle-play fa-2xl"></i>

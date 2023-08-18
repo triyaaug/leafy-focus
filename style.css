@@ -9,7 +9,8 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	height: 100px;
-	background: #042630;
+	/**background: #042630;*/
+    background: #041421;
 	border-radius: 10px;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -50,7 +51,7 @@ body {
 	margin-top: 50px;
 	margin-left: 5vh;
 	margin: 0 auto;
-	top: 30%;
+	top: 25%;
  	left: 50%;
   	transform: translate(-50%, -50%);
 }
@@ -64,6 +65,7 @@ body {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
 	border-radius: 10px;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -75,6 +77,32 @@ body {
 
 .modes button:hover {
 	background: transparent;
+}
+
+/**
+#countdown {
+    display: inline-flex;
+    width: 200px;
+    height: 70px;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+}**/
+
+#countdown {
+    color: white;
+    font-size: 75px;
+    display: flex;
+	justify-content: center;
+	flex-direction: row;
+	position: absolute;
+    margin-top: 100px;
+	margin-left: 5vh;
+	margin: 0 auto;
+	top: 55%;
+ 	left: 50%;
+  	transform: translate(-50%, -50%);
+    
 }
 
 #girl {
