@@ -105,6 +105,23 @@ body {
     
 }
 
+.actions {
+    display: flex;
+	justify-content: center;
+	flex-direction: row;
+	position: absolute;
+    margin-top: 100px;
+	margin-left: 5vh;
+	margin: 0 auto;
+	top: 80%;
+ 	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.actions i {
+    margin: 0 20px;
+}
+
 #girl {
 	float: right;
 	height: 300px;

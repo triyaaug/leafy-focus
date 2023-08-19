@@ -1,27 +1,61 @@
-const pomodoro = 25;
-const short = 5;
-const long = 10;
-
 document.addEventListener("DOMContentLoaded", function() {
     
-    const startingMinutes = 10;
-    let time = startingMinutes * 60;
+    //const startingMinutes = 10;
+    //let time = startingMinutes * 60; //gets seconds
+    const pomodoro = 25;
+    const pomodoros = pomodoro * 60;
+    const short = 5;
+    const shorts = short * 60;
+    const long = 10;
+    const longs = long * 60;
     let timerInterval;
 
     const countdown = document.getElementById('countdown');
+    
+    //pomodoro button timer
     const pomodoroB = document.getElementById('pomodoro');
     pomodoroB.addEventListener('click', startPomodoro);
-
     function startPomodoro() {
         clearInterval(timerInterval);
-        timerInterval = setInterval(updateCountdown, 1000);
+        let timeLeft = pomodoros;
+        timerInterval = setInterval(function() {
+            updateCountdown(timeLeft);
+            timeLeft--;
+        }
+        , 1000);
     }
 
-    function updateCountdown() {
+    //short break button timer
+    const shortB = document.getElementById('short');
+    shortB.addEventListener('click', startShort);
+    function startShort() {
+        clearInterval(timerInterval);
+        let timeLeft = shorts;
+        timerInterval = setInterval(function() {
+            updateCountdown(timeLeft);
+            timeLeft--;
+        }
+        , 1000);
+    }
+
+    //long break button timer
+    const longB = document.getElementById('long');
+    longB.addEventListener('click', startLong);
+    function startLong() {
+        clearInterval(timerInterval);
+        let timeLeft = longs;
+        timerInterval = setInterval(function() {
+            updateCountdown(timeLeft);
+            timeLeft--;
+        }
+        , 1000);
+    }
+
+    function updateCountdown(time) {
         const minutes = Math.floor(time/60);
         let seconds = time % 60;
         seconds = seconds < 10 ? '0' + seconds: seconds;
-        countdown.innerHTML = `${minutes}: ${seconds}`;
-        time--;
+        countdown.innerHTML = `${minutes}:${seconds}`;
+        //time--;
     }
 });
