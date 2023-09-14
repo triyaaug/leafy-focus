@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", function() {
     //let time = startingMinutes * 60; //gets seconds
     const pomodoro = 25;
     const pomodoros = pomodoro * 60;
-    const short = 5;
+    const short = 1;
     const shorts = short * 60;
     const long = 10;
     const longs = long * 60;
     let timerInterval; //interval ID
     let timeLeft = 0;
+    let elapsedTime = 0;
 
     const countdown = document.getElementById('countdown');
     
@@ -22,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
+            elapsedTime++;
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+            }
         }
         , 1000);
     }
@@ -35,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
+            elapsedTime++;
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+            }
         }
         , 1000);
     }
@@ -48,6 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
+            elapsedTime++;
+            if (timeLeft < 0) {
+                clearInterval(timerInterval);
+            }
         }
         , 1000);
     }
