@@ -7,6 +7,22 @@
     <link rel="stylesheet" type="text/css" href="style.css" title="style" />
     <script src = "script.js"> </script>
     <script src="https://kit.fontawesome.com/4c58cb05f2.js" crossorigin="anonymous"></script>
+
+    <style> 
+      html {
+        scroll-behavior: smooth;
+        scroll-padding: 5rem;
+      }
+
+      #timer {
+        height: 100vh;
+      }
+
+      #list {
+        height: 100vh;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -40,12 +56,19 @@
         <button id = "long"> Long Break </button>
       </div>
       <div class = "actions">
-        <i class="fa-regular fa-circle-pause fa-2xl" style="color: #c5cbcb;"></i>
-        <i class="fa-regular fa-circle-play fa-2xl" style="color: #c5cbcb;"></i>
+        <button id = "pauseB" class = "pause" style="background: none; border: none">
+            <i class="fa-regular fa-circle-pause fa-2xl" style="color: #c5cbcb;"></i>
+        </button>
+        <button id = "resumeB" class = "play" style="background: none; border: none"> 
+            <i class="fa-regular fa-circle-play fa-2xl" style="color: #c5cbcb;"></i>
+        </button>
+        <button id="resetB" class = "reset" style="background: none; border: none">
+            <i class="fa-solid fa-arrow-rotate-left fa-2xl" style="color: #c5cbcb;"></i>
+        </button>
         <!--colour example
         <i class="fa-solid fa-rotate-right fa-2xl" style="color: #545f73;"></i>
         -->
-        <i class="fa-solid fa-arrow-rotate-left fa-2xl" style="color: #c5cbcb;"></i>
+        
       </div>
       <p id = "countdown">00:00</p>
     </div>

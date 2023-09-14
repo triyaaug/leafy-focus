@@ -1,6 +1,6 @@
 body {
 	background: #4C7273;
-	height: 100vh;
+	height: 100%;
 }
 
 .header {
@@ -116,10 +116,12 @@ body {
 	top: 80%;
  	left: 50%;
   	transform: translate(-50%, -50%);
+    
 }
 
 .actions i {
     margin: 0 20px;
+    
 }
 
 #girl {

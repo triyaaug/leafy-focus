@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const shorts = short * 60;
     const long = 10;
     const longs = long * 60;
-    let timerInterval;
+    let timerInterval; //interval ID
+    let timeLeft = 0;
 
     const countdown = document.getElementById('countdown');
     
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     pomodoroB.addEventListener('click', startPomodoro);
     function startPomodoro() {
         clearInterval(timerInterval);
-        let timeLeft = pomodoros;
+        timeLeft = pomodoros;
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     shortB.addEventListener('click', startShort);
     function startShort() {
         clearInterval(timerInterval);
-        let timeLeft = shorts;
+        timeLeft = shorts;
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     longB.addEventListener('click', startLong);
     function startLong() {
         clearInterval(timerInterval);
-        let timeLeft = longs;
+        timeLeft = longs;
         timerInterval = setInterval(function() {
             updateCountdown(timeLeft);
             timeLeft--;
@@ -58,4 +59,32 @@ document.addEventListener("DOMContentLoaded", function() {
         countdown.innerHTML = `${minutes}:${seconds}`;
         //time--;
     }
+
+    //pause
+    const pause = document.getElementById('pauseB');
+    pause.addEventListener('click', pauseTime)
+    
+    function pauseTime() {
+        clearInterval(timerInterval);
+    }
+
+    //play
+    const resume = document.getElementById('resumeB');
+    resume.addEventListener('click', resumeTime)
+
+    function resumeTime() {
+        timerInterval = setInterval(function() {
+            updateCountdown(timeLeft);
+            timeLeft--;
+        }
+        , 1000);
+    }
+    
+    //reset
+    const reset = document.getElementById('resetB');
+
+
+
+
 });
+
